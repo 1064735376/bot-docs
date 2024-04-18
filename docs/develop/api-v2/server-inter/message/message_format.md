@@ -2,9 +2,9 @@
 
 ### 功能描述
 
-利用 `content` 字段发送内嵌格式的消息。
+利用 `内容` 字段发送内嵌格式的消息。
 
-- 内嵌格式仅在 `content` 中会生效，在 `Ark` 和 `Embed` 中不生效。
+- 内嵌格式仅在 `内容` 中会生效，在 `方舟` 和 `嵌入` 中不生效。
 - 为了区分是文本还是内嵌格式，消息抄送和发送会对消息内容进行相关的转义，参考 [转义内容](#转义内容)
 
 ### 支持的格式
@@ -14,7 +14,7 @@
 | @用户  | `<@user_id>` 或者 `<@!user_id>` | 解析为 `@用户` 标签                                                                                    | `<@1234000000001>`  |
 | @所有人 | `@everyone`                   | 解析为 `@所有人` 标签，需要机器人拥有发送 `@所有人` 消息的权限                                                            | `@everyone`         |
 | #子频道 | `<#channel_id>`               | 解析为 `#子频道` 标签，点击可以跳转至子频道，仅支持当前频道内的子频道                                                           | `<#12345>`          |
-| 表情   | `<emoji:id>`                  | 解析为系统表情，具体表情id参考 [Emoji 列表](../../openapi/emoji/model.md#Emoji列表)，仅支持type=1的系统表情，type=2的emoji表情直接按字符串填写即可 | `<emoji:4>` 解析为得意情 |
+| 表情   | `<emoji:id>`                  | 解析为系统表情，具体表情id参考 [表情符号列表](../../openapi/Emoji/model.md#Emoji列表)，仅支持type=1的系统表情，type=2的emoji表情直接按字符串填写即可 | `<emoji:4>` 解析为得意情 |
 
 ### 转义内容
 
@@ -33,7 +33,7 @@
 
 ```json
 {
-    "content":"<@!1234>hello world"
+“内容”：“<@！1234>hello world”
 }
 ```
 
@@ -41,22 +41,22 @@
 
 ```json
 {
-  "id": "xxxxxx",
-  "channel_id": "xxxxxx",
-  "guild_id": "xxxxxx",
-  "content": "<@!1234>hello world",
-  "timestamp": "2021-05-13T14:45:45+08:00",
-  "tts": false,
-  "mention_everyone": false,
-  "author": {
-    "id": "xxxxxx",
-    "username": "abc",
-    "avatar": "",
-    "bot": true
+"id": "xxxxxx",
+"channel_id": "xxxxxx",
+"guild_id": "xxxxxx",
+“内容”：“<@！1234>hello world”，
+“时间戳”："2021-05-13T14:45:45+08:00"，
+“tts”：假的，
+“提_大家”：假的，
+“作者”：{
+"id": "xxxxxx",
+“用户名”：“abc”，
+《阿凡达》：
+"bot": true
   },
-  "embeds": [{}],
-  "pinned": false,
-  "type": 0,
-  "flags": 0
+“嵌入”：[{}]，
+“钉住”：错，
+“类型”：0，
+“旗帜”：0
 }
 ```
